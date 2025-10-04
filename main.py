@@ -12,20 +12,14 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 
-
 load_dotenv()
-
 
 model = YOLO("yolov8n.pt")
 vid = cv2.VideoCapture(0)
 
-
-
 last_whatsapp_time = last_email_time = 0  
 whatsapp_cooldown = 60  
 email_cooldown = 30     
-
-
 
 def send_whatsapp_alert(objects):
     account_sid = os.getenv('TWILIO_ACCOUNT_SID')
@@ -52,14 +46,13 @@ def send_whatsapp_alert(objects):
     print(f"Whatsapp alert sent: {message.sid}")
 
 
-
 def send_email_alert(frame, objects):
     sender_email = os.getenv("EMAIL_SENDER")
     receiver_email = os.getenv("EMAIL_RECEIVER")
     password = os.getenv("EMAIL_PASSWORD")
 
     timestamp = dt.datetime.now().strftime("%Y-%m-%d__%H-%M-%S")
-    image_path = f"AI Powered Defence Surveillance Bot/snapshots/intruder_{timestamp}.jpg"
+    image_path = f"snapshots/intruder_{timestamp}.jpg" 
     cv2.imwrite(image_path, frame)
 
     msg = MIMEMultipart()
@@ -90,8 +83,6 @@ Snapshot is attached below.
         print("[Email sent!]")
     except Exception as e:
         print(f"[Email failed]: {e}")
-
-
 
 
 while True:
@@ -125,7 +116,6 @@ while True:
             send_whatsapp_alert(detected_objects)
             send_email_alert(frame, detected_objects)
             last_whatsapp_time = last_email_time = current_time
-
 
 
     cv2.imshow("AI Surveillance Bot", frame)
