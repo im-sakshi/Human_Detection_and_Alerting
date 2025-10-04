@@ -23,8 +23,8 @@ This project aims to serve as a smart, low-cost surveillance solution for defens
       ________________________|_______________________________
       Programming             |            Python
       Computer Vision	      |            OpenCV, YOLOv8
-      Notifications	      |            Twilio API, smtplib
-      Environment Management	|            dotenv
+      Notifications           |            Twilio API, smtplib
+      Environment Management  |            dotenv
 
 
 **🧾 How It Works**
@@ -33,7 +33,7 @@ This project aims to serve as a smart, low-cost surveillance solution for defens
       2. YOLOv8 detects humans and other objects within the frame.
       3. When an object or person is identified:
         (a) A WhatsApp alert is triggered via Twilio.
-        (b)An Email alert is sent with a snapshot attachment and timestamp.
+        (b) An Email alert is sent with a snapshot attachment and timestamp.
 
 
 **Environment Setup 👇🏻👇🏻**
@@ -53,7 +53,7 @@ This project aims to serve as a smart, low-cost surveillance solution for defens
 **⚙️ Running the Project**
 
       🔵 Clone the repository
-          git clone https://github.com/<your-username>/Human_Detection_and_Alerting.git
+         git clone https://github.com/<your-username>/Human_Detection_and_Alerting.git
 
       🟡 Move into project folder
          cd Human_Detection_and_Alerting
