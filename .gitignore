@@ -1,0 +1,25 @@
+.env
+
+#Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+#IDE settings
+.vscode/
+.idea/
+
+#Datasets and weights
+*.pt
+runs/
+datasets/
+models/
+
+#Output folders
+detected_humans/
+
+#Misc
+.DS_Store
+Thumbs.db
+log.txt

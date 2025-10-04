@@ -1,0 +1,12 @@
+opencv-python
+ultralytics
+numpy
+playsound
+twilio
+python-dotenv
+smtplib
+email
+os
+datetime
+threading
+dotenv
