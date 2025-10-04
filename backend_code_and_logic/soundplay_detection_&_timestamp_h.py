@@ -6,9 +6,7 @@ import cv2
 from ultralytics import YOLO
 import datetime as dt
 
-
-
-sound_path = "AI Powered Defence Surveillance Bot/warning.mp3"
+sound_path = "warning.mp3"
 
 model=YOLO("yolov8n.pt")
 vid= cv2.VideoCapture(0)
@@ -43,14 +41,12 @@ while True:
                 # Plays alert sound 
                 threading.Thread(target=play_alert, daemon=True).start()
 
-                #displays timestamp in Console
                 timestamp = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 print(f"[Alert] Human detected at {timestamp} - Confidence: {confidence *100:.2f}%")
 
                 #Saving timestamp in a log file
-                with open("AI Powered Defence Surveillance Bot/log.txt", "a") as log_file:
+                with open("log.txt", "a") as log_file:
                     log_file.write(f"[ALERT] Human detected at {timestamp} — Confidence: {confidence * 100:.2f}%\n")
-
 
 
     cv2.imshow("AI Surveillance Bot", frame)
