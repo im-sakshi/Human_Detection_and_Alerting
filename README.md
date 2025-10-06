@@ -53,7 +53,7 @@ This project aims to serve as a smart, low-cost surveillance solution for defens
 **⚙️ Running the Project**
 
       🔵 Clone the repository
-         git clone https://github.com/<your-username>/Human_Detection_and_Alerting.git
+         git clone https://github.com/im-sakshi/Human_Detection_and_Alerting.git
 
       🟡 Move into project folder
          cd Human_Detection_and_Alerting
